@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController 
+@interface ViewController : UIViewController {
+    
+    NSMutableArray *arrListA ;
+    NSMutableArray *arrListB ;
+    
+}
+
+- (void)sortArray:(NSMutableArray *)elementsList withStart:(NSInteger)start andEnd:(NSInteger)end ;
 
 
 @end
