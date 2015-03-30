@@ -26,22 +26,23 @@
     
     arrListA = [self fillRandomElementsIntoArray:arrListA];
     [self sortArray:arrListA withStart:0 andEnd:arrListA.count - 1];
-    
-    NSLog(@"Elements of Sorted Array A = %@", arrListA);
+    self.lblToDisplayListA.text = [arrListA componentsJoinedByString:@", "];
     
     arrListB = [self fillRandomElementsIntoArray:arrListB];
     [self sortArray:arrListB withStart:0 andEnd:arrListB.count - 1];
-
-    NSLog(@"Elements of Sorted Array B = %@", arrListB);
+    self.lblToDisplayListB.text = [arrListB componentsJoinedByString:@", "];
     
     int aCounter = 0 ;
     int bCounter = 0 ;
+    
+    NSMutableArray *_arrayCommonElements = [[NSMutableArray alloc] init];
     
     while (aCounter < arrListA.count && bCounter < arrListB.count) {
         
         if ([[arrListA objectAtIndex:aCounter] isEqual:[arrListB objectAtIndex:bCounter]]) {
             
-            NSLog(@"Element present in both arrays = %@",[arrListA objectAtIndex:aCounter]);
+            [_arrayCommonElements addObject:[arrListA objectAtIndex:aCounter]];
+            
              bCounter++ ;
              aCounter++ ;
         } else if ([[arrListA objectAtIndex:aCounter] integerValue] > [[arrListB objectAtIndex:bCounter] integerValue]) {
@@ -54,6 +55,9 @@
         }
         
     } //while loop closed
+    
+    self.lblToDisplayCommonList.text = [_arrayCommonElements componentsJoinedByString:@", "];
+
 }
 
 - (void)didReceiveMemoryWarning {

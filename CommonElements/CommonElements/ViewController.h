@@ -15,6 +15,11 @@
     
 }
 
+// iboutlets
+@property (nonatomic, weak) IBOutlet UILabel *lblToDisplayListA ;
+@property (nonatomic, weak) IBOutlet UILabel *lblToDisplayListB ;
+@property (nonatomic, weak) IBOutlet UILabel *lblToDisplayCommonList ;
+
 - (void)sortArray:(NSMutableArray *)elementsList withStart:(NSInteger)start andEnd:(NSInteger)end ;
 
 
